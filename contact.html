@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Search and Links</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      margin: 0;
+      padding: 0;
+      background-image: url('43533.jpg'); /* Replace with your image URL */
+      background-size: cover; /* Ensures the image covers the whole screen */
+      background-position: center; /* Centers the image */
+      background-attachment: fixed; /* Keeps the background fixed during scrolling */
+      color: white; /* Optional: text color for better contrast */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Example content */
+    .content {
+      text-align: center;
+      padding: 100px;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+	  background-color: #000;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Search bar container */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5px;
+      background-color: #000000;
+    }
+    .search-container input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    .search-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .search-container button:hover {
+      background-color: #ddd;
+    }
+    .reset-btn {
+      background-color: #f44336;
+      color: white;
+    }
+
+    /* Results section */
+    .results {
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+	
+	//stili i Social
+	    .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+ 
+.contact-form {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #00f;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ie90ff;
+            color: blue;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #D9EEE1;
+        }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+     <!-- Search Section -->
+ 
+  </div>
+
+
+   <div class="sociallinks">
+ <!-- Add font awesome icons -->
+<br />
+<a href="#" class="fa fa-twitter"></a> <br />
+<br />
+<a href="#" class="fa fa-facebook"></a><br /><br />
+<a href="#" class="fa fa-instagram"></a><br /><br />
+<a href="#" class="fa fa-youtube"></a>
+	</div>
+	<div class="content">
+   <h1>CONTACT US</h1>
+    <p>Get in touch</p>
+	<div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="mailto:contact@company.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message"> Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+
+
+
+
+ 
+
+  <!-- Search Results Section -->
+  <div id="searchResults" class="results"></div>
+
+  <script>
+    // Function to handle search logic
+    function search() {
+      const searchQuery = document.getElementById('searchInput').value;
+      const resultsContainer = document.getElementById('searchResults');
+
+      if (searchQuery) {
+        resultsContainer.innerHTML = `<h3>Recommendations for: <strong>${searchQuery}</strong></h3><p>Displaying search results...</p>`;
+      } else {
+        resultsContainer.innerHTML = `<p>Please enter a keyword to search for recommendations.</p>`;
+      }
+    }
+
+    // Function to reset search input and results
+    function resetSearch() {
+      document.getElementById('searchInput').value = '';  // Clear the search bar
+      document.getElementById('searchResults').innerHTML = '';  // Clear the search results
+    }
+  </script>
+
+</body>
+</html>

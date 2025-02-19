@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Search and Links</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      margin: 0;
+      padding: 0;
+      background-image: url('43533.jpg'); /* Replace with your image URL */
+      background-size: cover; /* Ensures the image covers the whole screen */
+      background-position: center; /* Centers the image */
+      background-attachment: fixed; /* Keeps the background fixed during scrolling */
+      color: white; /* Optional: text color for better contrast */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Example content */
+    .content {
+      text-align: center;
+      padding: 100px;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+	  background-color: #000;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Search bar container */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5px;
+      background-color: #000000;
+    }
+    .search-container input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    .search-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .search-container button:hover {
+      background-color: #ddd;
+    }
+    .reset-btn {
+      background-color: #f44336;
+      color: white;
+    }
+
+    /* Results section */
+    .results {
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+	
+	//stili i Social
+	    .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+ 
+div.team {
+  width:60%;
+  
+  text-align: center;
+ overflow:auto;
+}
+div.team div {
+  width:33%;  
+  float:left;
+
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+     <!-- Search Section -->
+  
+  </div>
+
+
+   <div class="sociallinks">
+ <!-- Add font awesome icons -->
+<br />
+<a href="#" class="fa fa-twitter"></a> <br />
+<br />
+<a href="#" class="fa fa-facebook"></a><br /><br />
+<a href="#" class="fa fa-instagram"></a><br /><br />
+<a href="#" class="fa fa-youtube"></a>
+	</div>
+	<div class="content">
+   <h1>Welcome to Our Travel Company</h1>
+    <p style="text-align: justify; border: 2px solid black; padding: 15px;">At our company, we believe that travel is more than just a journey – it's an experience that transforms, inspires, and creates lasting memories. We specialize in crafting personalized travel experiences for individuals, families, and groups, helping you explore the world with ease, comfort, and excitement.rom the moment you reach out to us, we work with you to tailor every aspect of your trip – from flights and accommodations to local experiences and excursions. Our mission is to help you explore the world in ways that suit your unique preferences, all while offering exceptional customer service at every step.
+
+Ready to explore? Let us take you on a journey that will leave you with stories to share and memories to cherish for a lifetime. Your adventure begins here!</p>
+  </div>
+  <center>
+  <div class="team">
+
+  <div style="background-color:#549df9;">
+    <h2>John Doe</h2>
+	<p>John Doe is responsible for marketing service</p>
+       <p>E-mail:<a href="mailto:contact@company.com">johndoe@company.com</a> </p>
+    
+    
+  </div>
+  
+  <div style="background-color:#47A7CE;">
+    <h2>Enco Doe</h2>
+     <p>Enco Doe is responsible for customer service</p>
+       <p>E-mail:<a href="mailto:contact@company.com">encodoe@company.com</a> </p>
+  </div>
+  
+  <div style="background-color:#7eaFac;">
+    <h2>Anna Fille</h2>
+     <p>Anna Fille is responsible for finance department</p>
+    <p>E-mail:<a href="mailto:contact@company.com">annafille@company.com</a> </p>
+  </div>
+
+</div>
+</center>
+
+
+
+ 
+
+  <!-- Search Results Section -->
+  <div id="searchResults" class="results"></div>
+
+  <script>
+    // Function to handle search logic
+    function search() {
+      const searchQuery = document.getElementById('searchInput').value;
+      const resultsContainer = document.getElementById('searchResults');
+
+      if (searchQuery) {
+        resultsContainer.innerHTML = `<h3>Recommendations for: <strong>${searchQuery}</strong></h3><p>Displaying search results...</p>`;
+      } else {
+        resultsContainer.innerHTML = `<p>Please enter a keyword to search for recommendations.</p>`;
+      }
+    }
+
+    // Function to reset search input and results
+    function resetSearch() {
+      document.getElementById('searchInput').value = '';  // Clear the search bar
+      document.getElementById('searchResults').innerHTML = '';  // Clear the search results
+    }
+  </script>
+
+</body>
+</html>
